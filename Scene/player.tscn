@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cal3ppkt6kpq2"]
+
+[ext_resource type="Texture2D" uid="uid://dg2niw24cgsih" path="res://art/playerGrey_up1.png" id="1_2sua0"]
+[ext_resource type="Texture2D" uid="uid://d20kg7qbeea76" path="res://art/playerGrey_up2.png" id="2_i1vc2"]
+[ext_resource type="Texture2D" uid="uid://do48rlu2ele5b" path="res://art/playerGrey_walk1.png" id="3_hm3ax"]
+[ext_resource type="Texture2D" uid="uid://b07vwcuj57vbi" path="res://art/playerGrey_walk2.png" id="4_3knnl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ot16r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2sua0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i1vc2")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hm3ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3knnl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ot16r")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
